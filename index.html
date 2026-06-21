@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baskılı Ambalajlar | Kraft & Şeffaf Ambalaj Çözümleri</title>
+    <meta name="description" content="Kafe, pastane ve büfeler için baskılı kraft kutu, şeffaf ambalaj, kağıt çanta ve karton/PET bardak çözümleri. Kurumsal kimliğinize özel butik baskı hizmeti.">
+    <meta name="theme-color" content="#8a5a32">
+
+    <!-- Sosyal medya paylaşım kartı -->
+    <meta property="og:title" content="Baskılı Ambalajlar | Kraft & Şeffaf Ambalaj Çözümleri">
+    <meta property="og:description" content="Kafe, pastane ve büfeler için baskılı kraft kutu, şeffaf ambalaj, kağıt çanta ve bardak çözümleri.">
+    <meta property="og:image" content="https://baskiliambalajlar.com.tr/assets/hero.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://baskiliambalajlar.com.tr/">
+
+    <!-- Favicon (kod içinde gömülü, dosya yüklemeye gerek yok) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238a5a32'/%3E%3Ctext x='50' y='65' font-size='55' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3EB%3C/text%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #f7f1e8;        /* krem / kraft fon */
+            --card-bg: #ffffff;
+            --accent-color: #a9824f;    /* logo kraft altın */
+            --accent-soft: #c8a878;     /* açık kraft */
+            --navy: #161b2e;            /* logo lacivert */
+            --green-accent: #5c7a4e;    /* cafe yeşili dokunuş (whatsapp) */
+            --text-color: #211c14;
+            --text-muted: #6b5d4f;
+            --border-color: #e3d8c4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(247, 241, 232, 0.97);
+            padding: 10px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 56px;
+            display: block;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            margin-top: 76px;
+            padding: 120px 5% 70px 5%;
+            text-align: center;
+            background:
+                linear-gradient(rgba(22,27,46,0.55), rgba(22,27,46,0.65)),
+                url('assets/hero.jpg')
+                no-repeat center 20%/cover;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #f3ece0;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+        }
+
+        .btn-main {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(138, 90, 50, 0.35);
+        }
+
+        .products-section {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            position: relative;
+            color: var(--text-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            background-color: var(--border-color);
+        }
+
+        .gallery-info {
+            padding: 20px;
+        }
+
+        .gallery-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .gallery-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .size-table {
+            width: 100%;
+            margin-top: 15px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 12px;
+            font-size: 13px;
+        }
+
+        .size-table-title {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .size-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .size-table th {
+            text-align: left;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 5px 4px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .size-table td {
+            padding: 5px 4px;
+            color: var(--text-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .size-note {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .about-section {
+            background-color: var(--card-bg);
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .feature-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+
+        .feature-box i {
+            font-size: 36px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            padding: 60px 5% 20px 5%;
+            background-color: var(--bg-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-info p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .social-links a.instagram-btn {
+            background-color: var(--accent-color);
+        }
+
+        .social-links a.whatsapp-btn {
+            background-color: var(--green-accent);
+        }
+
+        .social-links a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Sabit WhatsApp butonu */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--green-accent);
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            z-index: 999;
+            transition: 0.3s;
+            animation: wa-pulse 2s infinite;
+        }
+
+        @keyframes wa-pulse {
+            0% {
+                box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 0 rgba(92, 122, 78, 0.6);
+            }
+            70% {
+                box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 16px rgba(92, 122, 78, 0);
+            }
+            100% {
+                box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 0 rgba(92, 122, 78, 0);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 16px; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="assets/logo.png" alt="Baskılı Ambalaj Logo" class="logo-img">
+        <nav>
+            <a href="#urunler">Ürünler</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Kafe, Pastane ve Büfeler için Baskılı Ambalaj Çözümleri</h1>
+        <p>Kraft, beyaz ve şeffaf ambalaj seçenekleriyle markanızın kurumsal kimliğini sektörün ihtiyaçlarına uygun, dayanıklı ve estetik tasarımlarla buluşturuyoruz.</p>
+        <a href="#urunler" class="btn-main">Ürün Gruplarımız</a>
+    </section>
+
+    <section class="about-section">
+        <div class="about-container">
+            <h2 class="section-title">Güvenilir Üretim Çözümleri</h2>
+            <p style="color: var(--text-muted);">Müşterilerimize sadece ambalaj değil, markalarının kalitesini doğrudan yansıtacak rafine ve estetik çözümler sunuyoruz.</p>
+            <div class="features">
+                <div class="feature-box">
+                    <i class="fa-solid fa-gem"></i>
+                    <h3>Butik Kalite</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 5px;">Hassas detaylar, gofret ve varak baskı seçenekleri.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>Geniş Ürün Ağacı</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 5px;">Kraft kutudan şeffaf ambalaja, kafe ve büfe ihtiyaçlarına özel konsept bütünlüğü.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Kurumsal Güven</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 5px;">Üretimin her aşamasında şeffaf ve profesyonel süreç yönetimi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="urunler">
+        <h2 class="section-title">Ürün Kategorilerimiz</h2>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://placehold.co/600x450/c8a878/2e2118?text=Kraft+%26+Beyaz+Kutu&font=poppins" alt="Kraft ve Beyaz Baskılı Kutular" class="gallery-img" loading="lazy">
+                <div class="gallery-info">
+                    <h3>Kraft & Beyaz Baskılı Kutular</h3>
+                    <p>Kafe ve pastaneler için kraft, beyaz ve şeffaf pencereli kutu seçenekleri; özel logo baskısı ile markanıza özel tasarım.</p>
+                    <div class="size-table">
+                        <div class="size-table-title"><i class="fa-solid fa-ruler"></i> Ürün Ölçüleri</div>
+                        <table>
+                            <tr><th>Ürün Adı</th><th>Ebatlar</th></tr>
+                            <tr><td>Kutu 1</td><td>120x120x60 mm</td></tr>
+                            <tr><td>Kutu 2</td><td>160x160x70 mm</td></tr>
+                            <tr><td>Kutu 3</td><td>200x150x80 mm</td></tr>
+                        </table>
+                        <p class="size-note">* Örnek ölçülerdir, gerçek ürün ebatları güncellenecektir.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://placehold.co/600x450/8a5a32/ffffff?text=Kraft+%C3%87anta&font=poppins" alt="Kraft Kağıt Çantalar" class="gallery-img" loading="lazy">
+                <div class="gallery-info">
+                    <h3>Kraft & Beyaz Kağıt Çantalar</h3>
+                    <p>Farklı sap ve ip seçenekleriyle, kurumsal renklerinize tam uyumlu yüksek kaliteli baskılı kraft ve beyaz çantalar.</p>
+                    <div class="size-table">
+                        <div class="size-table-title"><i class="fa-solid fa-ruler"></i> Ürün Ölçüleri</div>
+                        <table>
+                            <tr><th>Ürün Adı</th><th>Ebatlar</th></tr>
+                            <tr><td>Kağıt Çanta 1</td><td>290x170x280 mm</td></tr>
+                            <tr><td>Kağıt Çanta 2</td><td>250x120x310 mm</td></tr>
+                            <tr><td>Kağıt Çanta 3</td><td>190x80x240 mm</td></tr>
+                        </table>
+                        <p class="size-note">* Örnek ölçülerdir, gerçek ürün ebatları güncellenecektir.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/cup.jpg" alt="Baskılı Karton ve PET Bardaklar" class="gallery-img" loading="lazy">
+                <div class="gallery-info">
+                    <h3>Baskılı Karton & PET Bardaklar</h3>
+                    <p>Kafeler ve büfeler için gıdaya uygun, sızdırmazlık garantili, yüksek adetli logolu bardak çözümleri.</p>
+                    <div class="size-table">
+                        <div class="size-table-title"><i class="fa-solid fa-ruler"></i> Ürün Ölçüleri</div>
+                        <table>
+                            <tr><th>Hacim</th><th>Kullanım</th></tr>
+                            <tr><td>250-300cc</td><td>Soğuk içecek</td></tr>
+                            <tr><td>400cc</td><td>Sıcak/soğuk içecek</td></tr>
+                            <tr><td>500cc / 22oz</td><td>Büyük boy içecek</td></tr>
+                        </table>
+                        <p class="size-note">* Örnek ölçülerdir, gerçek ürün ebatları güncellenecektir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align:center; color: var(--text-muted); font-size: 13px; margin-top: 25px;">
+            * Görseller geçici örnek görsellerdir, gerçek ürün fotoğrafları eklendiğinde güncellenecektir.
+        </p>
+    </section>
+
+    <footer id="iletisim">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h4>Baskılı Ambalajlar</h4>
+                <p>Kafe, pastane ve büfeler için kraft, beyaz ve şeffaf ambalaj çözümlerini tek noktadan karşılıyoruz.</p>
+            </div>
+            <div class="footer-info">
+                <h4>Hızlı İletişim</h4>
+                <p><i class="fa-solid fa-phone"></i> 0534 450 00 44</p>
+                <p>Sipariş talepleri, adet ve fiyatlandırma detayları için WhatsApp veya Instagram üzerinden bize ulaşabilirsiniz.</p>
+            </div>
+            <div class="footer-info">
+                <h4>Bizi Takip Edin</h4>
+                <p>Üretim aşamalarımızı ve en güncel referanslarımızı Instagram üzerinden takip edin.</p>
+                <div class="social-links">
+                    <a class="whatsapp-btn" href="https://wa.me/905344500044?text=Merhaba%2C%20ambalaj%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a class="instagram-btn" href="https://instagram.com/baskiliambalajlar" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 baskiliambalajlar.com.tr. Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/905344500044?text=Merhaba%2C%20ambalaj%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişime geç">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
