@@ -58,49 +58,100 @@
         }
 
         header {
-            background-color: rgba(247, 241, 232, 0.97);
-            padding: 10px 5%;
+            background-color: rgba(255, 255, 255, 0.98);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .header-top {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            padding: 12px 5%;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .logo-img {
-            height: 56px;
+            height: 64px;
             display: block;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--accent-color);
+        .header-nav {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
         }
 
         nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 12px 22px;
+            display: inline-block;
+            letter-spacing: 0.3px;
+            transition: color 0.2s, border-bottom 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        /* Hamburger (mobil) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 4px;
+            gap: 5px;
+            position: absolute;
+            right: 5%;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-color);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #fff;
+            border-top: 1px solid var(--border-color);
+            padding: 8px 0;
+        }
+
+        .mobile-menu a {
             color: var(--text-color);
             text-decoration: none;
             font-weight: 600;
-            margin-left: 25px;
             font-size: 15px;
+            padding: 12px 5%;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        nav a:hover {
-            color: var(--accent-color);
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu.open {
+            display: flex;
         }
 
         .hero {
-            margin-top: 76px;
+            margin-top: 120px;
             padding: 120px 5% 70px 5%;
             text-align: center;
             background:
@@ -389,21 +440,49 @@
         }
 
         @media (max-width: 768px) {
+            .hero { margin-top: 90px; }
             .hero h1 { font-size: 30px; }
             .hero p { font-size: 16px; }
-            nav { display: none; }
+            .header-nav { display: none; }
+            .hamburger { display: flex; }
+            .logo-img { height: 52px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="assets/logo.png" alt="Baskılı Ambalaj Logo" class="logo-img">
-        <nav>
-            <a href="#urunler">Ürünler</a>
-            <a href="#iletisim">İletişim</a>
-        </nav>
+        <div class="header-top">
+            <img src="assets/logo.png" alt="Baskılı Ambalaj Logo" class="logo-img">
+            <div class="hamburger" onclick="toggleMenu()" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="header-nav">
+            <nav>
+                <a href="#" class="active">Ana Sayfa</a>
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#urunler">Hizmetlerimiz</a>
+                <a href="#urunler">Galeri</a>
+                <a href="#iletisim">İletişim</a>
+            </nav>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#" onclick="toggleMenu()">Ana Sayfa</a>
+            <a href="#hakkimizda" onclick="toggleMenu()">Hakkımızda</a>
+            <a href="#urunler" onclick="toggleMenu()">Hizmetlerimiz</a>
+            <a href="#urunler" onclick="toggleMenu()">Galeri</a>
+            <a href="#iletisim" onclick="toggleMenu()">İletişim</a>
+        </div>
     </header>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+    </script>
 
     <section class="hero">
         <h1>Kafe, Pastane ve Büfeler için Baskılı Ambalaj Çözümleri</h1>
@@ -528,7 +607,7 @@
             </div>
         </div>
         <div class="copyright">
-            © 2026 baskiliambalajlar.com.tr. Tüm Hakları Saklıdır.
+            © 2026 baskiliambalajlar.com.tr. Tüm Hakları Saklıdır. &nbsp;|&nbsp; <a href="kvkk.html" style="color: var(--text-muted); text-decoration: underline;">KVKK Aydınlatma Metni</a>
         </div>
     </footer>
 
